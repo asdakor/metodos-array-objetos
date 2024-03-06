@@ -40,6 +40,9 @@
     //Agregar código para el desafio 2 aquí
     // ejercicio 1
     traumatologia.push({ hora: '09:00', especialista: 'RENÉ POBLETE', paciente: 'ANA GELLONA', rut: '13123329-7', prevision: 'ISAPRE' }, { hora: '09:30', especialista: 'MARIA SOLAR', paciente: 'RAMIRO ANDRADE', rut: '12221451-K', prevision: 'FONASA' }, { hora: '10:00', especialista: 'RAUL LOYOLA', paciente: 'CARMEN ISLA', rut: '10112348-3', prevision: 'ISAPRE' }, { hora: '10:30', especialista: 'ANTONIO LARENAS', paciente: 'PABLO LOAYZA', rut: '13453234-1', prevision: 'ISAPRE' }, { hora: '12:00', especialista: 'MATIAS ARAVENA', paciente: 'SUSANA POBLETE', rut: '14345656-6', prevision: 'FONASA' })
+    // ADICIONAL orden de pacientes traumatolodia segun horario tras haber ingresado a los nuevos pacientes
+    traumatologia.sort((a, b) => a.hora > b.hora) 
+
     // ejercicio 2
     radiologia.shift()
     radiologia.pop()
@@ -61,13 +64,18 @@
 
     document.write(`<p>-------------------------------------------------ejercicio 5-----------------------------------------------------------------</p>`);
     for (i = 0; i <= dental.length - 1; i++) {
-        if(dental[i].prevision === 'ISAPRE'){
+        if (dental[i].prevision === 'ISAPRE') {
             document.write(`<p>${dental[i].paciente} - ${dental[i].prevision}</p>`);
         }
-
     }
+    document.write(`<p>-------------------------------------------------ejercicio 6-----------------------------------------------------------------</p>`);
 
-
+    for (i = 0; i <= traumatologia.length - 1; i++) {
+        if (traumatologia[i].prevision === 'FONASA') {
+            document.write(`<p>${traumatologia[i].paciente} - ${traumatologia[i].prevision}</p>`);
+        }
+    }
+    document.write(`<p>------------------------------------------------------------------------------------------------------------------</p>`);
     //Agregar código para el desafio 2 aquí
 
     document.write(`<p>Cantidad de atenciones para Radiología: ${radiologia.length}</p>`);
